@@ -7,24 +7,48 @@ import java.util.List;
 
 /**
  * Factory class to get sample list of flights.
+ * Фабрика для получения тестового списка перелетов
  */
 class FlightBuilder {
     static List<Flight> createFlights() {
         LocalDateTime threeDaysFromNow = LocalDateTime.now().plusDays(3);
         return Arrays.asList(
-                //A normal flight with two hour duration
+                /**
+                 * A normal flight with two hour duration
+                 * Нормальный полет длительностью 2 ч
+                 */
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2)),
-                //A normal multi segment flight
+
+                /**
+                 * A normal multi segment flight
+                 * Нормальный полет с одной пересадкой
+                 */
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(3), threeDaysFromNow.plusHours(5)),
-                //A flight departing in the past
+
+                /**
+                 * A flight departing in the past
+                 * Полет, который уже совершен
+                 */
                 createFlight(threeDaysFromNow.minusDays(6), threeDaysFromNow),
-                //A flight that departs before it arrives
+
+                /**
+                 * A flight that departs before it arrives
+                 * Полет, в котором дата вылета позже даты прибытия (неверный полет)
+                 */
                 createFlight(threeDaysFromNow, threeDaysFromNow.minusHours(6)),
-                //A flight with more than two hours ground time
+
+                /**
+                 * A flight with more than two hours ground time
+                 * Полет с пересадкой более чем 2 часа
+                 */
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(5), threeDaysFromNow.plusHours(6)),
-                //Another flight with more than two hours ground time
+
+                /**
+                 * Another flight with more than two hours ground time
+                 * Полет с пересадкой более чем 2 часа (несколько пересадок)
+                 */
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(3), threeDaysFromNow.plusHours(4),
                         threeDaysFromNow.plusHours(6), threeDaysFromNow.plusHours(7)));
