@@ -50,7 +50,7 @@ public class FlightFilterImpl implements FlightFilter {
 
     /**
      * @param flight перелет
-     * @return суммарное время, проведенное на земле во время пересадки
+     * @return суммарное время, проведенное на земле во время пересадок
      */
     private long calculateTotalTransferTime(Flight flight) {
         List<Segment> segments = flight.getSegments();

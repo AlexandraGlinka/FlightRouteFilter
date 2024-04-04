@@ -1,11 +1,9 @@
 package com.gridnine.testing;
 
 import com.gridnine.testing.entity.Flight;
-import com.gridnine.testing.service.FlightFilter;
 import com.gridnine.testing.service.FlightFilterImpl;
 import com.gridnine.testing.testingData.FlightBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
