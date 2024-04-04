@@ -27,7 +27,7 @@ public class Main {
         System.out.println(separator());
 
         System.out.println("Правило исключения 3: Перелеты, где общее время, проведённое на земле, превышает два часа.");
-        List<Flight> filteredFlightsTransferExceedsTwoHours = new FlightFilterImpl().filterSumTransferExceedsTwoHours(flights);
+        List<Flight> filteredFlightsTransferExceedsTwoHours = new FlightFilterImpl().filterTotalTransferExceedsTwoHours(flights);
         filteredFlightsTransferExceedsTwoHours.forEach(System.out::println);
         System.out.println(separator());
     }
