@@ -1,7 +1,5 @@
 package com.gridnine.testing.service;
 
-import com.gridnine.testing.FlightFilterImpl;
-import com.gridnine.testing.InitFlightData;
 import com.gridnine.testing.entity.Flight;
 import org.junit.jupiter.api.Test;
 
