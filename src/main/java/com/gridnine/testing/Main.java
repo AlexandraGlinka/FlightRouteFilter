@@ -1,18 +1,27 @@
 package com.gridnine.testing;
 
 import com.gridnine.testing.entity.Flight;
+import com.gridnine.testing.service.FlightFilter;
+import com.gridnine.testing.service.FlightFilterImpl;
 import com.gridnine.testing.testingData.FlightBuilder;
 
+import java.util.ArrayList;
 import java.util.List;
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
         List<Flight> flights = FlightBuilder.createFlights();
 
-        for (Flight flight : flights) {
-            System.out.println(flight);
-        }
+        System.out.println("Тестовые данные:");
+        flights.forEach(System.out::println);
+        System.out.println(separator());
+
+        System.out.println("Правило исключения 1: Вылет до текущего момента времени.");
+        List<Flight> filteredFlightsBeforeNow = new FlightFilterImpl().filterBeforeNow(flights);
+        filteredFlightsBeforeNow.forEach(System.out::println);
+    }
+
+    private static String separator() {
+        return "---------------------";
     }
 }

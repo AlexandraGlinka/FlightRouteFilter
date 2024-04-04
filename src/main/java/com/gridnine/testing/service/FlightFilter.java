@@ -5,8 +5,7 @@ import com.gridnine.testing.entity.Flight;
 import java.util.List;
 
 public interface FlightFilter {
-    //Вылет до текущего момента времени.
-    List<Flight> filterBeforeNow();
+    List<Flight> filterBeforeNow(List<Flight> flights);
     //Сегменты с датой прилёта раньше даты вылета.
     List<Flight> filterArrivalBeforeDeparture();
     //Перелеты, где общее время, проведённое на земле, превышает два часа
