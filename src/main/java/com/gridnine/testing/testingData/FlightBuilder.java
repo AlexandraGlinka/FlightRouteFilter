@@ -47,7 +47,6 @@ public class FlightBuilder {
                  */
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(5), threeDaysFromNow.plusHours(6)),
-                //TODO необходимо исключить из тестового набора
 
                 /**
                  * Another flight with more than two hours ground time
@@ -56,7 +55,6 @@ public class FlightBuilder {
                 createFlight(threeDaysFromNow, threeDaysFromNow.plusHours(2),
                         threeDaysFromNow.plusHours(3), threeDaysFromNow.plusHours(4),
                         threeDaysFromNow.plusHours(6), threeDaysFromNow.plusHours(7)));
-                //TODO необходимо исключить из тестового набора полеты, где суммарное время на земле >2
     }
 
     private static Flight createFlight(final LocalDateTime... dates) {
