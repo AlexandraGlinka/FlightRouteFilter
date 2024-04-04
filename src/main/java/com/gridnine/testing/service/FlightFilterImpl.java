@@ -18,8 +18,12 @@ public class FlightFilterImpl implements FlightFilter {
     }
 
     @Override
-    public List<Flight> filterArrivalBeforeDeparture() {
-        return null;
+    public List<Flight> filterArrivalBeforeDeparture(List<Flight> flights) {
+        List<Flight> filteredFlightsArrivalBeforeDepart = flights.stream()
+                .filter(flight -> flight.getSegments().stream()
+                        .allMatch(segment -> segment.getDepartureDate().isBefore(segment.getArrivalDate())))
+                .collect(Collectors.toList());
+        return filteredFlightsArrivalBeforeDepart;
     }
 
     @Override

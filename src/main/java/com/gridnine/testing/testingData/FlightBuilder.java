@@ -34,14 +34,12 @@ public class FlightBuilder {
                  * Полет с датой вылета раньше текущего момента
                  */
                 createFlight(threeDaysFromNow.minusDays(6), threeDaysFromNow),
-                //TODO необходимо исключить из тестового набора
 
                 /**
                  * A flight that departs before it arrives
                  * Полет, в котором дата вылета позже даты прибытия (неверный полет)
                  */
                 createFlight(threeDaysFromNow, threeDaysFromNow.minusHours(6)),
-                //TODO необходимо исключить из тестового набора
 
                 /**
                  * A flight with more than two hours ground time
